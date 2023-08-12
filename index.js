@@ -17,7 +17,7 @@ const COMMANDS = {
 }
 
 const bot = new TelegramBot(TOKEN, {polling: true});
-
+console.log(bot);
 const state = {
     command: ''
 }

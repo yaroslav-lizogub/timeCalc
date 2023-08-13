@@ -3,11 +3,13 @@
 
 module.exports = async (request, response) => {
 
-    import 'dotenv/config'
-    import TelegramBot from 'node-telegram-bot-api';
-    import fs from 'fs';
+    const dotenv = require('dotenv');
+    dotenv.config();
 
-    import {timeStringToArray, timeObjToString, clear, MINUTES_IN_HOUR} from '../helper';
+    const TelegramBot = require('node-telegram-bot-api');
+    const fs = require('fs');
+
+    const { timeStringToArray, timeObjToString, clear, MINUTES_IN_HOUR } = require('../helper');
 
     const TOKEN = process.env.TOKEN;
     const BOT_IMAGE = process.env.BOT_IMAGE;

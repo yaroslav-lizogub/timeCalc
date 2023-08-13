@@ -1,4 +1,4 @@
-import 'dotenv/config'
+/*import 'dotenv/config'
 import TelegramBot from 'node-telegram-bot-api';
 import fs from 'fs';
 
@@ -47,7 +47,7 @@ const keyboard = {
             ]
         ]
     }
-}
+}*/
 
 /*bot.on('callback_query', async ({data, message}) => {
     const chatId = message.chat.id;

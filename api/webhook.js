@@ -25,7 +25,7 @@ module.exports = async (request, response) => {
 
             // Create a message to send back
             // We can use Markdown inside this
-            await bot.sendMessage(id, 'super', {parse_mode: 'Markdown'});
+            await bot.sendMessage(id, JSON.stringify(body), {parse_mode: 'Markdown'});
             const message = `✅ Thanks for your message: *"${text}"*\nHave a great day! 👋🏻`;
 
             // Send our new message back in Markdown and

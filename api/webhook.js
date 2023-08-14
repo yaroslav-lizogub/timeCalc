@@ -78,7 +78,7 @@ module.exports = async (request, response) => {
                     state.command = COMMANDS.add
                     await bot.sendSticker(id, BOT_IMAGE);
                     await bot.sendMessage(id, 'Привет, я помогу тебе посчитать часы и минуты. Напиши время в формате чч:мм-чч:мм');
-
+                    await bot.sendMessage(id, JSON.stringify(state));
                     break;
 
                 default:

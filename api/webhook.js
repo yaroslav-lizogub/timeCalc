@@ -72,13 +72,37 @@ module.exports = async (request, response) => {
             // and the text that the user sent
             const { chat: { id }, text } = body.message;
 
+            if (state.command === COMMANDS.add) {
+                //сначала нужна валидация
+                // await bot.sendMessage(chatId, 'Напиши время в формате чч:мм-чч:мм или выбери другой пункт', keyboard);
+
+                const userTime = text;
+
+                const timeArray = timeStringToArray(userTime);
+
+                const timeDiffInMinutes = timeArray[1] - timeArray[0];
+
+                const timeObj = {
+                    hours: Math.floor(timeDiffInMinutes / MINUTES_IN_HOUR),
+                    minutes: timeDiffInMinutes % MINUTES_IN_HOUR
+                };
+
+                fs.appendFile(`.chat-${id}`, `,${JSON.stringify(timeObj)}`, async (err) => {
+                    if (err) throw err;
+                });
+
+                await bot.sendMessage(id, `Добавлено: ${timeObjToString(timeObj)}`, keyboard);
+
+                return;
+            }
+
             switch (text) {
                 case COMMANDS.start:
                     // clear(id);
                     state.command = COMMANDS.add
                     await bot.sendSticker(id, BOT_IMAGE);
                     await bot.sendMessage(id, 'Привет, я помогу тебе посчитать часы и минуты. Напиши время в формате чч:мм-чч:мм');
-                    await bot.sendMessage(id, JSON.stringify(state));
+
                     break;
 
                 default:

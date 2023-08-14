@@ -16,7 +16,7 @@ module.exports = async (request, response) => {
 
         // Retrieve the POST request body that gets sent from Telegram
         const { body } = request;
-        await bot.sendMessage(id, request.json(), {parse_mode: 'Markdown'});
+        await bot.sendMessage(id, 'super', {parse_mode: 'Markdown'});
         // Ensure that this is a message being sent
         if (body.message) {
             // Retrieve the ID for this chat

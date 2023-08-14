@@ -2,6 +2,7 @@
 // We'll wait until we've responded to the user
 const TelegramBot = require('node-telegram-bot-api');
 
+process.env.NTBA_FIX_319 = 'test';
 module.exports = async (request, response) => {
 
     try {

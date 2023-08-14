@@ -12,7 +12,7 @@ module.exports = async (request, response) => {
         // Create our new bot handler with the token
         // that the Botfather gave us
         // Use an environment variable so we don't expose it in our code
-        const bot = new TelegramBot('https://tlgrm.eu/_/stickers/a4c/e36/a4ce36f5-6ade-31f1-bd80-bae383e1c466/1.webp');
+        const bot = new TelegramBot('6217059583:AAGiIn7Kx4_A5Qvl8HHhBWKUT4JjK1tgFc8');
 
         // Retrieve the POST request body that gets sent from Telegram
         const { body } = request;

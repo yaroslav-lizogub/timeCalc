@@ -16,7 +16,7 @@ module.exports = async (request, response) => {
 
         // Retrieve the POST request body that gets sent from Telegram
         const { body } = request;
-        await bot.sendMessage(id, 'super', {parse_mode: 'Markdown'});
+
         // Ensure that this is a message being sent
         if (body.message) {
             // Retrieve the ID for this chat
@@ -25,6 +25,7 @@ module.exports = async (request, response) => {
 
             // Create a message to send back
             // We can use Markdown inside this
+            await bot.sendMessage(id, 'super', {parse_mode: 'Markdown'});
             const message = `✅ Thanks for your message: *"${text}"*\nHave a great day! 👋🏻`;
 
             // Send our new message back in Markdown and

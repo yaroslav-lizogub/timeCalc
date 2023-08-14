@@ -8,7 +8,7 @@ const fs = require('fs');
 
 const { timeStringToArray, timeObjToString, clear, MINUTES_IN_HOUR } = require('../helper');
 
-const BOT_IMAGE = 'https://tlgrm.eu/_/stickers/a4c/e36/a4ce36f5-6ade-31f1-bd80-bae383e1c466/1.webp';
+// const BOT_IMAGE = 'https://tlgrm.eu/_/stickers/a4c/e36/a4ce36f5-6ade-31f1-bd80-bae383e1c466/1.webp';
 
 const COMMANDS = {
     start: '/start',
@@ -95,7 +95,7 @@ module.exports = async (request, response) => {
                 case COMMANDS.start:
                     clear(chatId);
                     state.command = COMMANDS.add
-                    await bot.sendSticker(chatId, BOT_IMAGE);
+                    // await bot.sendSticker(chatId, BOT_IMAGE);
                     await bot.sendMessage(chatId, 'Привет, я помогу тебе посчитать часы и минуты. Напиши время в формате чч:мм-чч:мм');
 
                     break;

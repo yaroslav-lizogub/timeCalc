@@ -8,6 +8,8 @@ const fs = require('fs');
 
 const { timeStringToArray, timeObjToString, clear, MINUTES_IN_HOUR } = require('../helper');
 
+const BOT_IMAGE = 'https://tlgrm.eu/_/stickers/a4c/e36/a4ce36f5-6ade-31f1-bd80-bae383e1c466/1.webp';
+
 const COMMANDS = {
     start: '/start',
     add: '/add',
@@ -15,6 +17,8 @@ const COMMANDS = {
     clear: 'clear',
     view_data: '/view_data'
 }
+
+
 
 module.exports = async (request, response) => {
 
